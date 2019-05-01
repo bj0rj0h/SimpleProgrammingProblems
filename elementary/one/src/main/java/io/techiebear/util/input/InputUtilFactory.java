@@ -1,4 +1,4 @@
-package util.input;
+package io.techiebear.util.input;
 
 public class InputUtilFactory {
 

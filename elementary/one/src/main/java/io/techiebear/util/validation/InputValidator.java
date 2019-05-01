@@ -1,4 +1,4 @@
-package util.validation;
+package io.techiebear.util.validation;
 
 public class InputValidator {
 

@@ -1,7 +1,7 @@
-package main;
+package io.techiebear.main;
 
-import controllers.ElementaryController;
-import util.input.InputUtilFactory;
+import io.techiebear.controllers.ElementaryController;
+import io.techiebear.util.input.InputUtilFactory;
 
 public class Main {
 

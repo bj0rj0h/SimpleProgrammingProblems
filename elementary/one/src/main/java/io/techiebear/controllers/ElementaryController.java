@@ -1,9 +1,9 @@
-package controllers;
+package io.techiebear.controllers;
 
 import io.techiebear.main.ElementaryService;
 import io.techiebear.main.Helloer;
-import util.input.InputUtil;
-import util.input.InputUtilFactory;
+import io.techiebear.util.input.InputUtil;
+import io.techiebear.util.input.InputUtilFactory;
 
 public class ElementaryController {
 

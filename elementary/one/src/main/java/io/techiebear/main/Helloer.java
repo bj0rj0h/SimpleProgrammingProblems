@@ -1,4 +1,4 @@
-package main;
+package io.techiebear.main;
 
 public class Helloer {
 

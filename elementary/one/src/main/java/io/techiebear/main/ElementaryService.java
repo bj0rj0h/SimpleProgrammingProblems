@@ -1,7 +1,7 @@
-package main;
+package io.techiebear.main;
 
-import util.input.InputUtil;
-import util.validation.InputValidator;
+import io.techiebear.util.input.InputUtil;
+import io.techiebear.util.validation.InputValidator;
 
 public class ElementaryService {
 

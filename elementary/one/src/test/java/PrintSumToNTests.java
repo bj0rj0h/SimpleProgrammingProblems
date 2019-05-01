@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import main.ElementaryService;
-import util.input.InputUtilFactory;
+import io.techiebear.main.ElementaryService;
+import io.techiebear.util.input.InputUtilFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
