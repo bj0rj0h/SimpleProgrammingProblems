@@ -27,9 +27,9 @@ public class PrintAliceOrBobTests {
     @Parameters
     public static Collection<Object[]> data(){
         return Arrays.asList(new Object[][]{
-                {"Alice\n","Alice"},{"alice\n","Alice"},{"AlIcE\n","Alice"},
-                {"Bob\n","Bob"},{"bob\n","Bob"},{"bOB\n","Bob"},
-                {"Kalle\n", ElementaryService.NOT_ALICE_NOT_BOB_ERROR},{"\n", ElementaryService.NOT_ALICE_NOT_BOB_ERROR}
+                {"Alice","Alice"},{"alice","Alice"},{"AlIcE","Alice"},
+                {"Bob","Bob"},{"bob","Bob"},{"bOB","Bob"},
+                {"Kalle", ElementaryService.NOT_ALICE_NOT_BOB_ERROR},{"", ElementaryService.NOT_ALICE_NOT_BOB_ERROR}
         });
     }
 
@@ -46,7 +46,7 @@ public class PrintAliceOrBobTests {
         InputStream in = new ByteArrayInputStream(name.getBytes());
         System.setIn(in);
 
-        assertEquals(result, elementaryService.fetchIfAliceOrBob());
+        assertEquals(result, elementaryService.checkIfAliceOrBob(name));
 
 
     }

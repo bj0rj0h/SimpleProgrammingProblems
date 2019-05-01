@@ -5,7 +5,7 @@ import util.validation.InputValidator;
 
 public class ElementaryService {
 
-    public static final String NOT_ALICE_NOT_BOB_ERROR = "User is neither Alice nor Bob";
+    public static final String NOT_ALICE_NOT_BOB_ERROR = "user is neither Alice nor Bob";
 
     InputUtil inputUtil;
 
@@ -15,16 +15,15 @@ public class ElementaryService {
 
     }
 
-    public String fetchIfAliceOrBob() {
+    public String checkIfAliceOrBob(String name) {
 
-        String input = inputUtil.getUserInputAsString();
-        if (InputValidator.validateInput(input)) {
+        if (InputValidator.validateInput(name)) {
 
             StringBuilder stringBuilder = new StringBuilder();
-            char lowerCaseChar = input.charAt(0);
+            char lowerCaseChar = name.charAt(0);
             char upperCaseChar = Character.toUpperCase(lowerCaseChar);
             stringBuilder.append(upperCaseChar);
-            stringBuilder.append(input.substring(1).toLowerCase());
+            stringBuilder.append(name.substring(1).toLowerCase());
             return stringBuilder.toString();
 
         } else {
@@ -58,15 +57,15 @@ public class ElementaryService {
         return sum;
 
     }
-    public int printAddOrMultOfN() {
+    public int printAddOrMultOfN(String choice) {
 
         int sum = 0;
-
-        String choice = inputUtil.getUserInputAsString();
         if (choice.compareToIgnoreCase("MULT") == 0) {
             sum = fetchMultipleOfNumbersUpToN();
         } else if (choice.compareToIgnoreCase("ADD") == 0) {
             sum = fetchSumOfNumbersUpToN();
+        } else {
+            return -1;
         }
 
         return sum;
