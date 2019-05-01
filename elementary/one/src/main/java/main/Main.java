@@ -13,9 +13,8 @@ public class Main {
         System.out.println("What is your name?");
         System.out.println(elementaryService.fetchIfAliceOrBob());
         System.out.println("Add or mult?");
-        elementaryService.printAddOrMultOfN();
         System.out.println("Enter n");
-        int result = elementaryService.fetchSumOfNumbersUpToN();
+        int result = elementaryService.printAddOrMultOfN();
         System.out.printf("Sum is: %d \n", result);
     }
 

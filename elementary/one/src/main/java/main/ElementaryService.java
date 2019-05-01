@@ -60,14 +60,16 @@ public class ElementaryService {
     }
     public int printAddOrMultOfN() {
 
+        int sum = 0;
 
-       
         String choice = inputUtil.getUserInputAsString();
         if (choice.compareToIgnoreCase("MULT") == 0) {
-            fetchMultipleOfNumbersUpToN();
+            sum = fetchMultipleOfNumbersUpToN();
         } else if (choice.compareToIgnoreCase("ADD") == 0) {
-            fetchSumOfNumbersUpToN();
+            sum = fetchSumOfNumbersUpToN();
         }
+
+        return sum;
 
     }
 }
