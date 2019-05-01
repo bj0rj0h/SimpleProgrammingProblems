@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PrintFactorialOfNTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-05-01T07:27:24" hostname="bjorns-mbp.lan" time="0.018">
+  <properties/>
+  <testcase name="printIfAliceOrBob_Collection_AliceOrBobReturned[0]" classname="PrintFactorialOfNTests" time="0.012"/>
+  <testcase name="printIfAliceOrBob_Collection_AliceOrBobReturned[1]" classname="PrintFactorialOfNTests" time="0.002"/>
+  <testcase name="printIfAliceOrBob_Collection_AliceOrBobReturned[2]" classname="PrintFactorialOfNTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

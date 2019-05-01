@@ -1,0 +1,54 @@
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+import main.ElementaryService;
+import util.input.InputUtilFactory;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
+
+@RunWith(Parameterized.class)
+public class PrintAliceOrBobTests {
+
+    @Parameter
+    public String name;
+
+    @Parameter(1)
+    public String result;
+
+    @Parameters
+    public static Collection<Object[]> data(){
+        return Arrays.asList(new Object[][]{
+                {"Alice\n","Alice"},{"alice\n","Alice"},{"AlIcE\n","Alice"},
+                {"Bob\n","Bob"},{"bob\n","Bob"},{"bOB\n","Bob"},
+                {"Kalle\n", ElementaryService.NOT_ALICE_NOT_BOB_ERROR},{"\n", ElementaryService.NOT_ALICE_NOT_BOB_ERROR}
+        });
+    }
+
+    private static ElementaryService elementaryService;
+
+    @BeforeClass
+    public static void setUp(){
+        elementaryService = new ElementaryService(InputUtilFactory.getNewInstance());
+    }
+
+    @Test
+    public void printIfAliceOrBob_Collection_AliceOrBobReturned(){
+
+        InputStream in = new ByteArrayInputStream(name.getBytes());
+        System.setIn(in);
+
+        assertEquals(result, elementaryService.fetchIfAliceOrBob());
+
+
+    }
+
+}
