@@ -1,6 +1,6 @@
 package main;
 
-import main.controllers.ElementaryController;
+import controllers.ElementaryController;
 import util.input.InputUtilFactory;
 
 public class Main {

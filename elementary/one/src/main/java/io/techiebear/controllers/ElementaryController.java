@@ -1,7 +1,7 @@
-package main.controllers;
+package controllers;
 
-import main.ElementaryService;
-import main.Helloer;
+import io.techiebear.main.ElementaryService;
+import io.techiebear.main.Helloer;
 import util.input.InputUtil;
 import util.input.InputUtilFactory;
 
