@@ -71,4 +71,24 @@ public class ElementaryService {
         return sum;
 
     }
+    public void printMultTableTo12() {
+
+        int spacing = 4;
+        for (int i = 1; i <= 12; i++) {
+            for (int j = 1; j <= 12; j++) {
+                int sum = i*j;
+                int digits = String.valueOf(sum).length();
+                System.out.printf("%d",sum);
+                addSpacing(spacing-digits);
+            }
+            System.out.println();
+        }
+    }
+    private void addSpacing(int spacing) {
+
+        for (int i = 0; i < spacing; i++) {
+            System.out.print(" ");
+        }
+
+    }
 }

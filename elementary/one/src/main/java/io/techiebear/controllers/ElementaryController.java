@@ -21,8 +21,9 @@ public class ElementaryController {
 
     public void startProgram() {
 
-        fetchAndValidateNameOfUser();
-        printSumOrFactorialOfN();
+        //fetchAndValidateNameOfUser();
+        //printSumOrFactorialOfN();
+        printMultTableTo12();
     }
 
     private void fetchAndValidateNameOfUser() {
@@ -43,6 +44,10 @@ public class ElementaryController {
         } else {
             System.out.println("Invalid choice. Must be mult or add");
         }
+    }
+
+    private void printMultTableTo12(){
+        elementaryService.printMultTableTo12();
     }
 
 }
