@@ -60,4 +60,39 @@ public class ListTest {
 
     }
 
+    @Test
+    public void hasElement_evenListOfStrings_true(){
+        List list = new ArrayList<>();
+        list.add("Björn");
+        list.add("Mr");
+        list.add("Hello");
+        boolean result = service.hasElement(list,"Mr");
+        assertEquals(true,result);
+
+    }
+
+    @Test
+    public void reverse_evenListOfIntegers_true(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        boolean result = service.hasElement(list,3);
+        assertEquals(true,result);
+
+    }
+
+    @Test
+    public void reverse_evenListOfIntegers_false(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        boolean result = service.hasElement(list,5);
+        assertEquals(false,result);
+
+    }
+
 }
