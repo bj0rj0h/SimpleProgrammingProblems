@@ -3,6 +3,8 @@ package io.techiebear.main;
 import io.techiebear.util.input.InputUtil;
 import io.techiebear.util.validation.InputValidator;
 
+import java.util.Calendar;
+
 public class ElementaryService {
 
     public static final String NOT_ALICE_NOT_BOB_ERROR = "user is neither Alice nor Bob";
@@ -57,9 +59,15 @@ public class ElementaryService {
         return sum;
 
     }
+
+    public void guessingGame() {
+
+
+    }
+
     public int printAddOrMultOfN(String choice) {
 
-        int sum = 0;
+        int sum;
         if (choice.compareToIgnoreCase("MULT") == 0) {
             sum = fetchMultipleOfNumbersUpToN();
         } else if (choice.compareToIgnoreCase("ADD") == 0) {
@@ -76,10 +84,10 @@ public class ElementaryService {
         int spacing = 4;
         for (int i = 1; i <= 12; i++) {
             for (int j = 1; j <= 12; j++) {
-                int sum = i*j;
+                int sum = i * j;
                 int digits = String.valueOf(sum).length();
-                System.out.printf("%d",sum);
-                addSpacing(spacing-digits);
+                System.out.printf("%d", sum);
+                addSpacing(spacing - digits);
             }
             System.out.println();
         }
@@ -91,4 +99,31 @@ public class ElementaryService {
         }
 
     }
+    public void printLeaps() {
+
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        for (int i = currentYear; i < currentYear + 20; i++) {
+            if (isLeap(i)) {
+                System.out.println(i + " is a leap year");
+            }
+        }
+
+    }
+
+    private boolean isLeap(int year) {
+
+        boolean isLeap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeap = true;
+                }
+            } else {
+                isLeap = true;
+            }
+        }
+        return isLeap;
+    }
+
 }

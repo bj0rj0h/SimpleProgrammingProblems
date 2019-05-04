@@ -5,6 +5,10 @@ import io.techiebear.main.Helloer;
 import io.techiebear.util.input.InputUtil;
 import io.techiebear.util.input.InputUtilFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class ElementaryController {
 
     private InputUtil inputUtil;
@@ -23,7 +27,13 @@ public class ElementaryController {
 
         //fetchAndValidateNameOfUser();
         //printSumOrFactorialOfN();
-        printMultTableTo12();
+        //printMultTableTo12();
+        //startGuessingGame();
+        printLeaps();
+    }
+    private void printLeaps() {
+        elementaryService.printLeaps();
+
     }
 
     private void fetchAndValidateNameOfUser() {
@@ -46,8 +56,38 @@ public class ElementaryController {
         }
     }
 
-    private void printMultTableTo12(){
+    private void printMultTableTo12() {
+
         elementaryService.printMultTableTo12();
+    }
+
+    private void startGuessingGame() {
+
+        boolean over = false;
+
+        int choice;
+        int guesses = 0;
+        List pastGuesses = new ArrayList<>();
+        Random rn = new Random();
+        int answer = rn.nextInt(10000);
+
+        while (!over) {
+            System.out.println("Take a guess");
+            choice = inputUtil.getUserInputAsInt();
+
+            if (!pastGuesses.contains(choice)) {
+                guesses++;
+            }
+            if (choice == answer) {
+                System.out.println("You won! Num guesses = " + guesses);
+                over = true;
+            } else {
+                String guessLocation = choice < answer ? "above" : "below";
+                System.out.println("Answer is " + guessLocation + " your guess");
+            }
+
+        }
+
     }
 
 }
