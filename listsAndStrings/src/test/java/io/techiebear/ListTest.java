@@ -49,4 +49,15 @@ public class ListTest {
 
     }
 
+    @Test
+    public void reverse_evenListOfStrings_reversedList(){
+        List list = new ArrayList<>();
+        list.add("Björn");
+        list.add("Mr");
+        list.add("Hello");
+        list = service.reverse(list);
+        assertEquals("Hello",list.get(0));
+
+    }
+
 }

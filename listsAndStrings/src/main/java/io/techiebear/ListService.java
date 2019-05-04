@@ -1,7 +1,5 @@
 package io.techiebear;
 
-
-import java.util.Collections;
 import java.util.List;
 
 public class ListService {
@@ -16,9 +14,14 @@ public class ListService {
 
     }
 
-    public List reverse(List list) {
+    public List reverse(List list){
 
-        Collections.reverse(list);
+        for (int i = 0; i < list.size()/2; i++) {
+            Object pos2 = list.get(list.size()-1-i);
+            list.set(list.size()-i-1,list.get(i));
+            list.set(i,pos2);
+        }
+
         return list;
     }
 }
