@@ -1,5 +1,7 @@
 package io.techiebear;
 
+
+import java.util.Collections;
 import java.util.List;
 
 public class ListService {
@@ -12,5 +14,11 @@ public class ListService {
         }
         return largest;
 
+    }
+
+    public List reverse(List list) {
+
+        Collections.reverse(list);
+        return list;
     }
 }
