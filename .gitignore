@@ -4,3 +4,4 @@ elementary/one/build/*
 listsAndStrings/.idea/*
 listsAndStrings/.gradle/*
 listsAndStrings/build/*
+listsAndStrings/out
