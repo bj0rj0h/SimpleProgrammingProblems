@@ -1,5 +1,6 @@
 package io.techiebear;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListService {
@@ -29,10 +30,21 @@ public class ListService {
 
         boolean result = false;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).equals(val)){
-                result =  true;
+            if (list.get(i).equals(val)) {
+                result = true;
             }
         }
+        return result;
+    }
+    public List returnOddsAsList(List list) {
+
+        List result = new ArrayList();
+        for (int i = 0; i < list.size(); i++) {
+            if (i % 2 != 0) {
+                result.add(list.get(i));
+            }
+        }
+
         return result;
     }
 }
