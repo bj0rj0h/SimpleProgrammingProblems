@@ -119,12 +119,4 @@ public class ListTest {
 
     }
 
-    @Test
-    public void isPalindrome_anna_true(){
-        String str = "anna";
-        List result = service.calculateRunningTotals(list);
-        assertEquals(6,result.get(2));
-
-    }
-
 }

@@ -59,4 +59,19 @@ public class ListService {
 
         return result;
     }
+    public boolean isPalindrome(String input) {
+
+        String reversedInput = reverseString(input);
+
+        return reversedInput.compareTo(input) == 0;
+    }
+    private String reverseString(String input) {
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = input.length()-1; i >= 0 ; i--) {
+            sb.append(input.charAt(i));
+        }
+
+        return sb.toString();
+    }
 }
