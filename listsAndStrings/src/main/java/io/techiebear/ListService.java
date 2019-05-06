@@ -36,6 +36,7 @@ public class ListService {
         }
         return result;
     }
+
     public List returnOddsAsList(List list) {
 
         List result = new ArrayList();
@@ -43,6 +44,17 @@ public class ListService {
             if (i % 2 != 0) {
                 result.add(list.get(i));
             }
+        }
+
+        return result;
+    }
+
+    public List<Integer> calculateRunningTotals(List<Integer> list) {
+
+        List<Integer> result = new ArrayList();
+        result.add(list.get(0));
+        for (int i = 1; i < list.size(); i++) {
+            result.add(result.get(i-1)+list.get(i));
         }
 
         return result;

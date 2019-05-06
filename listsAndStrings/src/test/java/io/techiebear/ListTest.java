@@ -107,4 +107,24 @@ public class ListTest {
 
     }
 
+    @Test
+    public void calculateRunningTotals_evenListOfIntegers_listOfRunningTotals(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        List result = service.calculateRunningTotals(list);
+        assertEquals(6,result.get(2));
+
+    }
+
+    @Test
+    public void isPalindrome_anna_true(){
+        String str = "anna";
+        List result = service.calculateRunningTotals(list);
+        assertEquals(6,result.get(2));
+
+    }
+
 }
