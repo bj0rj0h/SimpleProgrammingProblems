@@ -3,6 +3,7 @@ package io.techiebear;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Function;
 
 public class ListService {
 
@@ -109,5 +110,25 @@ public class ListService {
             return 0;
         }
         return list.get(0) + calculateSumWithRecursion(list.subList(1, list.size()));
+    }
+    public void fetch20perfectSquares() {
+
+        Function<Integer,Boolean> test = s -> {
+            double side = Math.sqrt(s);
+
+            double fractional = side - Math.floor(side);
+            if (fractional == 0){
+                return true;
+            }
+
+            return false;
+        };
+
+        for (int i = 0, count = 0;count<20; i++) {
+            if (test.apply(i)){
+                System.out.println(i);
+                count++;
+            }
+        }
     }
 }
