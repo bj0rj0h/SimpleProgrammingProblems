@@ -2,6 +2,7 @@ package io.techiebear;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ListService {
 
@@ -54,7 +55,7 @@ public class ListService {
         List<Integer> result = new ArrayList();
         result.add(list.get(0));
         for (int i = 1; i < list.size(); i++) {
-            result.add(result.get(i-1)+list.get(i));
+            result.add(result.get(i - 1) + list.get(i));
         }
 
         return result;
@@ -68,10 +69,45 @@ public class ListService {
     private String reverseString(String input) {
 
         StringBuilder sb = new StringBuilder();
-        for (int i = input.length()-1; i >= 0 ; i--) {
+        for (int i = input.length() - 1; i >= 0; i--) {
             sb.append(input.charAt(i));
         }
 
         return sb.toString();
+    }
+
+    public int calculateSumWithFor(List<Integer> list) {
+
+        int sum = 0;
+        if (list != null) {
+            for (int element : list) {
+                sum += element;
+            }
+        }
+        return sum;
+
+    }
+
+    public int calculateSumWithWhile(List<Integer> list) {
+
+        int sum = 0;
+
+        if (list != null) {
+            ListIterator<Integer> li = list.listIterator();
+
+            while (li.hasNext()) {
+                sum += li.next();
+            }
+        }
+
+        return sum;
+
+    }
+    public int calculateSumWithRecursion(List<Integer> list) {
+
+        if ( list == null || list.isEmpty()) {
+            return 0;
+        }
+        return list.get(0) + calculateSumWithRecursion(list.subList(1, list.size()));
     }
 }

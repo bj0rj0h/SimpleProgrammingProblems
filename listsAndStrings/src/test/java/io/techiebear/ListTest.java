@@ -11,10 +11,12 @@ import static org.junit.Assert.*;
 public class ListTest {
 
     private static List<Integer> list;
+    private static List<Integer> emptyList;
     private static ListService service;
 
     @BeforeClass
     public static void setUp(){
+        emptyList = new ArrayList<>();
         list = List.of(1,2,4,400,300,399,142,156,354,324);
         service = new ListService();
     }
@@ -117,6 +119,60 @@ public class ListTest {
         List result = service.calculateRunningTotals(list);
         assertEquals(6,result.get(2));
 
+    }
+
+    @Test
+    public void calculateSumWithFor_listOfIntegers_sumIs2082(){
+        int result = service.calculateSumWithFor(list);
+        assertEquals(2082,result);
+    }
+
+    @Test
+    public void calculateSumWithWhile_listOfIntegers_sumIs2082(){
+        int result = service.calculateSumWithWhile(list);
+        assertEquals(2082,result);
+    }
+
+    @Test
+    public void calculateSumWithRecursion_listOfIntegers_sumIs2082(){
+        int result = service.calculateSumWithRecursion(list);
+        assertEquals(2082,result);
+    }
+
+    @Test
+    public void calculateSumWithFor_emptyList_sumIs0(){
+        int result = service.calculateSumWithFor(emptyList);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void calculateSumWithWhile_emptyList_sumIs0(){
+        int result = service.calculateSumWithWhile(emptyList);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void calculateSumWithRecursion_emptyList_sumIs0(){
+        int result = service.calculateSumWithRecursion(emptyList);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void calculateSumWithFor_null_sumIs0(){
+        int result = service.calculateSumWithFor(null);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void calculateSumWithWhile_null_sumIs0(){
+        int result = service.calculateSumWithWhile(null);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void calculateSumWithRecursion_null_sumIs0(){
+        int result = service.calculateSumWithRecursion(null);
+        assertEquals(0,result);
     }
 
 }
