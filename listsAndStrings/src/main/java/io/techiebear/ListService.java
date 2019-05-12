@@ -113,16 +113,7 @@ public class ListService {
     }
     public void fetch20perfectSquares() {
 
-        Function<Integer,Boolean> test = s -> {
-            double side = Math.sqrt(s);
-
-            double fractional = side - Math.floor(side);
-            if (fractional == 0){
-                return true;
-            }
-
-            return false;
-        };
+        Function<Integer,Boolean> test = this::hasPerfectSquare;
 
         for (int i = 0, count = 0;count<20; i++) {
             if (test.apply(i)){
@@ -130,5 +121,16 @@ public class ListService {
                 count++;
             }
         }
+    }
+
+    private boolean hasPerfectSquare(int val){
+        double side = Math.sqrt(val);
+
+        double fractional = side - Math.floor(side);
+        if (fractional == 0){
+            return true;
+        }
+
+        return false;
     }
 }

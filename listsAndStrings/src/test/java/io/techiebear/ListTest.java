@@ -193,5 +193,10 @@ public class ListTest {
         assertEquals(0, result);
     }
 
+    @Test
+    public void fetch20PerfectSquares_void_first20PerfectSquares() {
+
+        service.fetch20perfectSquares();
+    }
 
 }
